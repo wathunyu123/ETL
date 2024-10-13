@@ -1,0 +1,95 @@
+[2024-10-10 04:41:16,366] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_receipt 2024-10-10T04:39:27.817496+00:00 [queued]>
+[2024-10-10 04:41:16,373] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_receipt 2024-10-10T04:39:27.817496+00:00 [queued]>
+[2024-10-10 04:41:16,374] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:41:16,374] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 04:41:16,375] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:41:16,384] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): check_null_receipt> on 2024-10-10T04:39:27.817496+00:00
+[2024-10-10 04:41:16,388] {standard_task_runner.py:52} INFO - Started process 34499 to run task
+[2024-10-10 04:41:16,390] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'check_null_receipt', '2024-10-10T04:39:27.817496+00:00', '--job-id', '442', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpclszkhfv', '--error-file', '/tmp/tmpiwbvizeo']
+[2024-10-10 04:41:16,393] {standard_task_runner.py:77} INFO - Job 442: Subtask check_null_receipt
+[2024-10-10 04:41:16,419] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.check_null_receipt 2024-10-10T04:39:27.817496+00:00 [running]> on host da843a407010
+[2024-10-10 04:41:16,448] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=check_null_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T04:39:27.817496+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T04:39:27.817496+00:00
+[2024-10-10 04:41:17,748] {python.py:151} INFO - Done. Returned value was: PAY_ID               0
+PAY_MEMB_NO          0
+PAY_TYPE             0
+PAY_DOC_NO           0
+PAY_SAVING_DOC_NO    0
+PAY_DATE             0
+PAY_DUE_DATE         0
+PAY_OP_CODE1         0
+PAY_OP_CODE2         0
+PAY_ACC_NO           0
+PAY_OLD_SHR          0
+PAY_OLD_INT          0
+PAY_SAVE_STS         0
+PAY_BANK_TYPE        0
+PAY_MEMB_DEPT        0
+PAY_USER_ID          0
+PAY_FINE_AMT         0
+PAY_OVER_AMT         0
+PAY_PRINT_DATE       0
+PAY_PRINT_OP_CODE    0
+POST_DATETIME        0
+PAY_ITEM             0
+PAY_PROM_TYPE        0
+PAY_PROM_YY          0
+PAY_PROM_NO          0
+PAY_PROM_BRH         0
+PAY_PERD             0
+PAY_AMT1             0
+PAY_AMT2             0
+PAY_RECV_AMT1        0
+PAY_RECV_AMT2        0
+PAY_MONTH_AMT1       0
+PAY_MONTH_AMT2       0
+PAY_ACC_AMT1         0
+PAY_ACC_AMT2         0
+PAY_RET_AMT2         0
+PAY_OLD_BAL          0
+PAY_ACCU_INT         0
+PAY_PROM_STS         0
+PAY_PROM_INT         0
+PAY_RINT_AMT         0
+PAY_DESC             0
+PAY_REF_NO           0
+PAY_REF_ID           0
+PAY_PERD_AMT         0
+PAY_COND_TYPE        0
+dtype: int64
+[2024-10-10 04:41:17,751] {xcom.py:229} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2024-10-10 04:41:17,757] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1364, in _execute_task
+    self.xcom_push(key=XCOM_RETURN_KEY, value=result)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1943, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 79, in set
+    value = XCom.serialize_value(value)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 226, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Series' is not JSON serializable
+[2024-10-10 04:41:17,764] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=mssql_dag, task_id=check_null_receipt, execution_date=20241010T043927, start_date=20241010T044116, end_date=20241010T044117
+[2024-10-10 04:41:17,809] {local_task_job.py:149} INFO - Task exited with return code 1

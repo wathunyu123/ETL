@@ -1,0 +1,37 @@
+[2024-10-10 16:26:38,928] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.boxplot_data_receipt 2024-10-10T16:24:03.207887+00:00 [queued]>
+[2024-10-10 16:26:38,943] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.boxplot_data_receipt 2024-10-10T16:24:03.207887+00:00 [queued]>
+[2024-10-10 16:26:38,944] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:26:38,944] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 16:26:38,944] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:26:38,951] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): boxplot_data_receipt> on 2024-10-10T16:24:03.207887+00:00
+[2024-10-10 16:26:38,956] {standard_task_runner.py:52} INFO - Started process 89121 to run task
+[2024-10-10 16:26:38,960] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'boxplot_data_receipt', '2024-10-10T16:24:03.207887+00:00', '--job-id', '583', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp3zmxh1uq', '--error-file', '/tmp/tmpj3z1nlr_']
+[2024-10-10 16:26:38,963] {standard_task_runner.py:77} INFO - Job 583: Subtask boxplot_data_receipt
+[2024-10-10 16:26:38,996] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.boxplot_data_receipt 2024-10-10T16:24:03.207887+00:00 [running]> on host da843a407010
+[2024-10-10 16:26:39,042] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=boxplot_data_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T16:24:03.207887+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T16:24:03.207887+00:00
+[2024-10-10 16:26:41,088] {logging_mixin.py:104} INFO -            PAY_ID PAY_MEMB_NO PAY_TYPE  ... PAY_REF_ID PAY_PERD_AMT PAY_COND_TYPE
+0      1506004702         470        2  ...       NULL         NULL          NULL
+1      1509006602         660        2  ...       NULL         NULL          NULL
+2      1604004492         449        2  ...       NULL         1660             2
+3      1610003122         312        2  ...       NULL         2300             2
+4      1701002642         264        2  ...       NULL         NULL          NULL
+...           ...         ...      ...  ...        ...          ...           ...
+70297  2108003762         376        2  ...   52400014         1440             2
+70298  2108003772         377        2  ...   52400014         1440             2
+70299  2108003852         385        2  ...   52400014         1440             2
+70300  2108003852         385        2  ...   52400014         1210             1
+70301  2108003852         385        2  ...   52400014         1610             2
+
+[70302 rows x 46 columns]
+[2024-10-10 16:26:41,262] {logging_mixin.py:104} INFO - Boxplot saved as /tmp/receipt_boxplot.png
+[2024-10-10 16:26:41,263] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 16:26:41,271] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=boxplot_data_receipt, execution_date=20241010T162403, start_date=20241010T162638, end_date=20241010T162641
+[2024-10-10 16:26:41,367] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 16:26:41,420] {local_task_job.py:149} INFO - Task exited with return code 0

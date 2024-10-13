@@ -1,0 +1,52 @@
+[2024-10-10 04:48:21,963] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean2_receipt 2024-10-10T04:41:29.950282+00:00 [queued]>
+[2024-10-10 04:48:21,970] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean2_receipt 2024-10-10T04:41:29.950282+00:00 [queued]>
+[2024-10-10 04:48:21,970] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:48:21,971] {taskinstance.py:1088} INFO - Starting attempt 2 of 2
+[2024-10-10 04:48:21,971] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:48:21,981] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): clean2_receipt> on 2024-10-10T04:41:29.950282+00:00
+[2024-10-10 04:48:21,985] {standard_task_runner.py:52} INFO - Started process 38319 to run task
+[2024-10-10 04:48:21,987] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'clean2_receipt', '2024-10-10T04:41:29.950282+00:00', '--job-id', '460', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp8bdp5dj9', '--error-file', '/tmp/tmpsvth9gs5']
+[2024-10-10 04:48:21,990] {standard_task_runner.py:77} INFO - Job 460: Subtask clean2_receipt
+[2024-10-10 04:48:22,017] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.clean2_receipt 2024-10-10T04:41:29.950282+00:00 [running]> on host da843a407010
+[2024-10-10 04:48:22,047] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=clean2_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T04:41:29.950282+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T04:41:29.950282+00:00
+[2024-10-10 04:48:22,051] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1675, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 1683, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'PROM_SPEC_TYPE'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/mssql_dag.py", line 369, in clean2_contract
+    df_contract = clean_column(df_contract, column, dtype)
+  File "/opt/airflow/dags/mssql_dag.py", line 309, in clean_column
+    df[column_name] = pd.to_numeric(df[column_name], errors='coerce')
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/frame.py", line 2906, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
+    raise KeyError(key) from err
+KeyError: 'PROM_SPEC_TYPE'
+[2024-10-10 04:48:22,060] {taskinstance.py:1551} INFO - Marking task as FAILED. dag_id=mssql_dag, task_id=clean2_receipt, execution_date=20241010T044129, start_date=20241010T044821, end_date=20241010T044822
+[2024-10-10 04:48:22,080] {local_task_job.py:149} INFO - Task exited with return code 1

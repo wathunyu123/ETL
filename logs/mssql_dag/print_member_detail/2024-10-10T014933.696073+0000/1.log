@@ -1,0 +1,38 @@
+[2024-10-10 01:49:36,520] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail 2024-10-10T01:49:33.696073+00:00 [queued]>
+[2024-10-10 01:49:36,527] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail 2024-10-10T01:49:33.696073+00:00 [queued]>
+[2024-10-10 01:49:36,532] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:49:36,537] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 01:49:36,551] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:49:36,565] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_member_detail> on 2024-10-10T01:49:33.696073+00:00
+[2024-10-10 01:49:36,571] {standard_task_runner.py:52} INFO - Started process 47059 to run task
+[2024-10-10 01:49:36,573] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_member_detail', '2024-10-10T01:49:33.696073+00:00', '--job-id', '203', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmprrn3iman', '--error-file', '/tmp/tmpx4a5lvu7']
+[2024-10-10 01:49:36,576] {standard_task_runner.py:77} INFO - Job 203: Subtask print_member_detail
+[2024-10-10 01:49:36,604] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_member_detail 2024-10-10T01:49:33.696073+00:00 [running]> on host da843a407010
+[2024-10-10 01:49:36,642] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_member_detail
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T01:49:33.696073+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T01:49:33.696073+00:00
+[2024-10-10 01:49:36,774] {logging_mixin.py:104} INFO -      MAST_MEMB_NO MAST_MEMB_DEPT  ... MAST_GUIDE_MEMB_NO POST_DATETIME
+0           726.0           1151  ...               NULL          NULL
+1           727.0           1153  ...               NULL          NULL
+2           729.0           1156  ...               NULL          NULL
+3           734.0           1156  ...               NULL          NULL
+4           735.0           3450  ...               NULL          NULL
+..            ...            ...  ...                ...           ...
+146         312.0           1156  ...               NULL          NULL
+147         319.0           1156  ...               NULL          NULL
+148         323.0           1156  ...               NULL          NULL
+149         324.0           1156  ...               NULL          NULL
+150         336.0           1156  ...               NULL          NULL
+
+[151 rows x 86 columns]
+[2024-10-10 01:49:36,928] {logging_mixin.py:104} INFO - Error inserting DataFrame: (207, b"Invalid column name 'nan'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[2024-10-10 01:49:36,929] {logging_mixin.py:104} INFO - The DataFrame for table 'member' is empty.
+[2024-10-10 01:49:36,929] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 01:49:36,936] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=print_member_detail, execution_date=20241010T014933, start_date=20241010T014936, end_date=20241010T014936
+[2024-10-10 01:49:36,957] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 01:49:36,986] {local_task_job.py:149} INFO - Task exited with return code 0

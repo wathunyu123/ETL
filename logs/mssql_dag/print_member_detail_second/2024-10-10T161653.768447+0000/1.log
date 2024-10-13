@@ -1,0 +1,132 @@
+[2024-10-10 16:17:03,581] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail_second 2024-10-10T16:16:53.768447+00:00 [queued]>
+[2024-10-10 16:17:03,593] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail_second 2024-10-10T16:16:53.768447+00:00 [queued]>
+[2024-10-10 16:17:03,594] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:17:03,594] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 16:17:03,594] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:17:03,601] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_member_detail_second> on 2024-10-10T16:16:53.768447+00:00
+[2024-10-10 16:17:03,606] {standard_task_runner.py:52} INFO - Started process 83732 to run task
+[2024-10-10 16:17:03,609] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_member_detail_second', '2024-10-10T16:16:53.768447+00:00', '--job-id', '552', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp15g0od5k', '--error-file', '/tmp/tmpp560pyeq']
+[2024-10-10 16:17:03,612] {standard_task_runner.py:77} INFO - Job 552: Subtask print_member_detail_second
+[2024-10-10 16:17:03,644] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_member_detail_second 2024-10-10T16:16:53.768447+00:00 [running]> on host da843a407010
+[2024-10-10 16:17:03,677] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_member_detail_second
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T16:16:53.768447+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T16:16:53.768447+00:00
+[2024-10-10 16:17:03,793] {logging_mixin.py:104} INFO -    MAST_MEMB_NO MAST_MEMB_DEPT  ... MAST_GUIDE_MEMB_NO POST_DATETIME
+0           612           1156  ...               NULL          NULL
+1           743           1156  ...               NULL          NULL
+2           747           1156  ...               NULL          NULL
+3           748           1156  ...               NULL          NULL
+4           749           1156  ...               NULL          NULL
+
+[5 rows x 85 columns]
+[2024-10-10 16:17:03,804] {logging_mixin.py:104} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 300 entries, 0 to 299
+Data columns (total 85 columns):
+ #   Column               Non-Null Count  Dtype 
+---  ------               --------------  ----- 
+ 0   MAST_MEMB_NO         300 non-null    int64 
+ 1   MAST_MEMB_DEPT       300 non-null    object
+ 2   MAST_DEPT_BRH        300 non-null    object
+ 3   MAST_ZIP             300 non-null    object
+ 4   MAST_BIRTH_YMD       300 non-null    object
+ 5   MAST_MARRY_STS       300 non-null    object
+ 6   MAST_YMD_IN          300 non-null    object
+ 7   MAST_YMD_OUT         300 non-null    object
+ 8   MAST_SALARY          300 non-null    object
+ 9   MAST_MEMB_TYPE       300 non-null    object
+ 10  MAST_MONTH_SHR       300 non-null    object
+ 11  MAST_PAID_TYPE       300 non-null    object
+ 12  MAST_REC_STS         300 non-null    object
+ 13  MAST_PAID_COND       300 non-null    object
+ 14  MAST_PAID_LAST       300 non-null    object
+ 15  MAST_PAID_TIME       300 non-null    object
+ 16  MAST_PAID_PERD       300 non-null    object
+ 17  MAST_PAID_AMT        300 non-null    object
+ 18  MAST_PAID_SHR        300 non-null    object
+ 19  MAST_RECV_STS        300 non-null    object
+ 20  MAST_RET_STS         300 non-null    object
+ 21  MAST_INT_COMM        300 non-null    object
+ 22  MAST_INT_EMRG        300 non-null    object
+ 23  MAST_INT_SPEC        300 non-null    object
+ 24  MAST_ACCU_DIVD       300 non-null    object
+ 25  MAST_MEMB_ID         300 non-null    int64 
+ 26  MAST_CLEAR_YMD       300 non-null    object
+ 27  MAST_CLEAR_AMT       300 non-null    object
+ 28  MAST_CHANGE_YMD      300 non-null    object
+ 29  MAST_OLD_INT         300 non-null    object
+ 30  MAST_MEMB_FLAG       300 non-null    object
+ 31  MAST_GUARANTEE       300 non-null    object
+ 32  MAST_PAIDDIVD_STS    300 non-null    object
+ 33  MAST_GUAR_STS        300 non-null    object
+ 34  MAST_OUT_STS         300 non-null    object
+ 35  MAST_CARD_ID         300 non-null    object
+ 36  MAST_PAY_STS         300 non-null    object
+ 37  MAST_MARRY_MEMBNO    300 non-null    object
+ 38  MAST_PROM_HOME       300 non-null    object
+ 39  MAST_RIGHT_TYPE      300 non-null    object
+ 40  MAST_FLAG_STS1       300 non-null    object
+ 41  MAST_MEMB_SEX        300 non-null    object
+ 42  MAST_HELP_CNT        300 non-null    object
+ 43  MAST_RECV_BANK_NO    300 non-null    object
+ 44  MAST_RECV_BANK_TYPE  300 non-null    object
+ 45  MAST_PAY_BANK_NO     300 non-null    object
+ 46  MAST_PAY_BANK_TYPE   300 non-null    object
+ 47  MAST_CARD_BANK_NO    300 non-null    object
+ 48  MAST_CARD_BANK_TYPE  300 non-null    object
+ 49  MAST_CARD_BANK_STS   300 non-null    object
+ 50  MAST_CLEVEL          300 non-null    object
+ 51  MAST_SALARY2         300 non-null    object
+ 52  MAST_CARD_DATE1      300 non-null    object
+ 53  MAST_CARD_DATE2      300 non-null    object
+ 54  MAST_BANK_ACNO       300 non-null    object
+ 55  MAST_BANK_ACNO_TYPE  300 non-null    object
+ 56  MAST_POSITION        300 non-null    object
+ 57  MAST_BOOK_LINE       300 non-null    object
+ 58  MAST_NATIONAL        300 non-null    object
+ 59  MAST_MOBILE          300 non-null    object
+ 60  MAST_SMS_GRP         300 non-null    object
+ 61  MAST_SMS_STS         300 non-null    object
+ 62  MAST_ACC_NO          300 non-null    object
+ 63  MAST_PROM_NO         300 non-null    object
+ 64  MAST_FINE_AMT        300 non-null    object
+ 65  MAST_PROM_INT        300 non-null    object
+ 66  MAST_SAL_ACC_NO      300 non-null    object
+ 67  MAST_SAL_TO_COOP     300 non-null    object
+ 68  MAST_SAL_TO_BANK     300 non-null    object
+ 69  MAST_ZIP2            300 non-null    object
+ 70  MAST_REP_PAY_AMT     300 non-null    object
+ 71  MAST_IS_PRN_SLIP     300 non-null    object
+ 72  MAST_SEND_DOC_TYPE   300 non-null    object
+ 73  MAST_REF_MEMB_NO     300 non-null    object
+ 74  MAST_MEMB_REF_STS    300 non-null    object
+ 75  MAST_RETIRE_SALARY   300 non-null    object
+ 76  MAST_INC_AMT         300 non-null    object
+ 77  MAST_BLOOD_GROUP     300 non-null    object
+ 78  MAST_SALARY_DEP      300 non-null    object
+ 79  MAST_OP_CODE         300 non-null    object
+ 80  MAST_WORK_DATE       300 non-null    object
+ 81  MAST_EMP_TYPE        300 non-null    object
+ 82  MAST_RISK_STS        300 non-null    object
+ 83  MAST_GUIDE_MEMB_NO   300 non-null    object
+ 84  POST_DATETIME        300 non-null    object
+dtypes: int64(2), object(83)
+memory usage: 199.3+ KB
+[2024-10-10 16:17:03,805] {logging_mixin.py:104} INFO - None
+[2024-10-10 16:17:03,817] {logging_mixin.py:104} INFO -        MAST_MEMB_NO  MAST_MEMB_ID
+count    300.000000  3.000000e+02
+mean     412.400000  6.733673e+03
+std      232.348832  8.233229e+04
+min       11.000000  0.000000e+00
+25%      207.000000  0.000000e+00
+50%      419.500000  0.000000e+00
+75%      621.000000  0.000000e+00
+max      767.000000  1.010051e+06
+[2024-10-10 16:17:03,818] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 16:17:03,824] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=print_member_detail_second, execution_date=20241010T161653, start_date=20241010T161703, end_date=20241010T161703
+[2024-10-10 16:17:03,842] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 16:17:03,860] {local_task_job.py:149} INFO - Task exited with return code 0

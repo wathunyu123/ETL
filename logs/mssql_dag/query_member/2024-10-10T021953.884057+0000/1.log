@@ -1,0 +1,56 @@
+[2024-10-10 02:19:55,206] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:19:53.884057+00:00 [queued]>
+[2024-10-10 02:19:55,217] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:19:53.884057+00:00 [queued]>
+[2024-10-10 02:19:55,218] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:19:55,218] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 02:19:55,218] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:19:55,259] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_member> on 2024-10-10T02:19:53.884057+00:00
+[2024-10-10 02:19:55,271] {standard_task_runner.py:52} INFO - Started process 63109 to run task
+[2024-10-10 02:19:55,366] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_member', '2024-10-10T02:19:53.884057+00:00', '--job-id', '243', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp6l1pubzx', '--error-file', '/tmp/tmpgq85hlxn']
+[2024-10-10 02:19:55,384] {standard_task_runner.py:77} INFO - Job 243: Subtask query_member
+[2024-10-10 02:19:55,543] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_member 2024-10-10T02:19:53.884057+00:00 [running]> on host da843a407010
+[2024-10-10 02:19:55,742] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T02:19:53.884057+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T02:19:53.884057+00:00
+[2024-10-10 02:19:55,768] {logging_mixin.py:104} INFO - Empty DataFrame
+Columns: []
+Index: []
+[2024-10-10 02:19:55,831] {logging_mixin.py:104} INFO - All records deleted from table 'tmp_member' successfully.
+[2024-10-10 02:19:56,091] {logging_mixin.py:104} INFO - Error inserting DataFrame: (207, b"Invalid column name 'nan'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[2024-10-10 02:19:56,092] {python.py:151} INFO - Done. Returned value was: Empty DataFrame
+Columns: []
+Index: []
+[2024-10-10 02:19:56,094] {xcom.py:229} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2024-10-10 02:19:56,094] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1364, in _execute_task
+    self.xcom_push(key=XCOM_RETURN_KEY, value=result)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1943, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 79, in set
+    value = XCom.serialize_value(value)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 226, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'DataFrame' is not JSON serializable
+[2024-10-10 02:19:56,097] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=mssql_dag, task_id=query_member, execution_date=20241010T021953, start_date=20241010T021955, end_date=20241010T021956
+[2024-10-10 02:19:56,148] {local_task_job.py:149} INFO - Task exited with return code 1

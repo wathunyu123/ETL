@@ -1,0 +1,50 @@
+[2024-10-10 03:46:42,896] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:46:41.983328+00:00 [queued]>
+[2024-10-10 03:46:42,903] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:46:41.983328+00:00 [queued]>
+[2024-10-10 03:46:42,904] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:46:42,904] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 03:46:42,905] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:46:42,915] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_receipt> on 2024-10-10T03:46:41.983328+00:00
+[2024-10-10 03:46:42,920] {standard_task_runner.py:52} INFO - Started process 9590 to run task
+[2024-10-10 03:46:42,923] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_receipt', '2024-10-10T03:46:41.983328+00:00', '--job-id', '386', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmphhv4vd2t', '--error-file', '/tmp/tmpeijamqzr']
+[2024-10-10 03:46:42,926] {standard_task_runner.py:77} INFO - Job 386: Subtask query_receipt
+[2024-10-10 03:46:42,953] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:46:41.983328+00:00 [running]> on host da843a407010
+[2024-10-10 03:46:42,984] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T03:46:41.983328+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T03:46:41.983328+00:00
+[2024-10-10 03:46:44,395] {logging_mixin.py:104} INFO - Index(['PAY_ID', 'PAY_MEMB_NO', 'PAY_TYPE', 'PAY_DOC_NO', 'PAY_SAVING_DOC_NO',
+       'PAY_DATE', 'PAY_DUE_DATE', 'PAY_OP_CODE1', 'PAY_OP_CODE2',
+       'PAY_ACC_NO', 'PAY_OLD_SHR', 'PAY_OLD_INT', 'PAY_SAVE_STS',
+       'PAY_BANK_TYPE', 'PAY_MEMB_DEPT', 'PAY_USER_ID', 'PAY_FINE_AMT',
+       'PAY_OVER_AMT', 'PAY_PRINT_DATE', 'PAY_PRINT_OP_CODE', 'POST_DATETIME',
+       'PAY_ITEM', 'PAY_PROM_TYPE', 'PAY_PROM_YY', 'PAY_PROM_NO',
+       'PAY_PROM_BRH', 'PAY_PERD', 'PAY_AMT1', 'PAY_AMT2', 'PAY_RECV_AMT1',
+       'PAY_RECV_AMT2', 'PAY_MONTH_AMT1', 'PAY_MONTH_AMT2', 'PAY_ACC_AMT1',
+       'PAY_ACC_AMT2', 'PAY_RET_AMT2', 'PAY_OLD_BAL', 'PAY_ACCU_INT',
+       'PAY_PROM_STS', 'PAY_PROM_INT', 'PAY_RINT_AMT', 'PAY_DESC',
+       'PAY_REF_NO', 'PAY_REF_ID', 'PAY_PERD_AMT', 'PAY_COND_TYPE',
+       'PROM_MEMB_NO', 'PROM_LOAN_TYPE', 'PROM_YY', 'PROM_NO', 'PROM_LOAN_BRH',
+       'PROM_LOAN_YMD', 'PROM_LOAN_AMT', 'PROM_LOAN_PERD',
+       'PROM_LOAN_PERD_AMT', 'PROM_LAST_YMD', 'PROM_PAID_AMT', 'PROM_PAID_INT',
+       'PROM_PAID_PERD', 'PROM_PAID_TIME', 'PROM_PAID_STS', 'PROM_CODERATE',
+       'PROM_COND_TYPE', 'PROM_PERD_AMT', 'PROM_REAL_AMT', 'PROM_RECV_AMT',
+       'PROM_RECV_YMD', 'PROM_RECV_TIME', 'PROM_REASON', 'PROM_WITH_MEMBNO',
+       'PROM_WITH_TYPE', 'PROM_INT_YMD', 'PROM_ACCU_INT', 'PROM_SPEC_TYPE',
+       'PROM_AMT_YMD', 'PROM_RET_INT', 'PROM_NPAY_INT', 'PROM_REQ_STS',
+       'PROM_PAY_STS', 'PROM_DUE_DATE', 'PROM_CHK_RIGHT',
+       'PROM_IS_CALL_AVG_INT', 'PROM_IS_CALL_ACCUED_INT', 'PROM_STOP_AMT_STS',
+       'PROM_NPL_CODE', 'PROM_DEBT_STS', 'PROM_DEBT_DUE_DATE',
+       'PROM_START_PAY', 'PROM_IS_CANCEL', 'PROM_PAID_MONTH_AMT',
+       'PROM_FUND_AMT', 'PROM_FUND_PAID_AMT', 'PROM_INT2_BAL',
+       'PROM_PERD_AMT_ADD', 'PROM_PERD_AMT_ADD_NEXT', 'PROM_OP_CODE'],
+      dtype='object')
+[2024-10-10 03:46:44,425] {logging_mixin.py:104} INFO - All records deleted from table 'tmp_receipt' successfully.
+[2024-10-10 03:46:44,582] {logging_mixin.py:104} INFO - Error inserting DataFrame: (207, b"Invalid column name 'PROM_MEMB_NO'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[2024-10-10 03:46:44,595] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 03:46:44,605] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_receipt, execution_date=20241010T034641, start_date=20241010T034642, end_date=20241010T034644
+[2024-10-10 03:46:44,624] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 03:46:44,659] {local_task_job.py:149} INFO - Task exited with return code 0

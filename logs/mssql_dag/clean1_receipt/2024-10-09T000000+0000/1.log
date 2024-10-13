@@ -1,0 +1,22 @@
+[2024-10-10 01:22:35,526] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean1_receipt 2024-10-09T00:00:00+00:00 [queued]>
+[2024-10-10 01:22:35,534] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean1_receipt 2024-10-09T00:00:00+00:00 [queued]>
+[2024-10-10 01:22:35,534] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:22:35,534] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 01:22:35,535] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:22:35,543] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): clean1_receipt> on 2024-10-09T00:00:00+00:00
+[2024-10-10 01:22:35,547] {standard_task_runner.py:52} INFO - Started process 33011 to run task
+[2024-10-10 01:22:35,549] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'clean1_receipt', '2024-10-09T00:00:00+00:00', '--job-id', '179', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpb06e1rd8', '--error-file', '/tmp/tmpefp_u6b2']
+[2024-10-10 01:22:35,552] {standard_task_runner.py:77} INFO - Job 179: Subtask clean1_receipt
+[2024-10-10 01:22:35,579] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.clean1_receipt 2024-10-09T00:00:00+00:00 [running]> on host da843a407010
+[2024-10-10 01:22:35,607] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=clean1_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-10-09T00:00:00+00:00
+[2024-10-10 01:22:35,614] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 01:22:35,621] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=clean1_receipt, execution_date=20241009T000000, start_date=20241010T012235, end_date=20241010T012235
+[2024-10-10 01:22:35,641] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 01:22:35,682] {local_task_job.py:149} INFO - Task exited with return code 0

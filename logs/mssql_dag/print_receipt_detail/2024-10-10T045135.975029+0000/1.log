@@ -1,0 +1,95 @@
+[2024-10-10 04:53:24,514] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T04:51:35.975029+00:00 [queued]>
+[2024-10-10 04:53:24,521] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T04:51:35.975029+00:00 [queued]>
+[2024-10-10 04:53:24,521] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:53:24,522] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 04:53:24,522] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:53:24,530] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_receipt_detail> on 2024-10-10T04:51:35.975029+00:00
+[2024-10-10 04:53:24,535] {standard_task_runner.py:52} INFO - Started process 41138 to run task
+[2024-10-10 04:53:24,537] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_receipt_detail', '2024-10-10T04:51:35.975029+00:00', '--job-id', '474', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpwwzshhva', '--error-file', '/tmp/tmpketyj35_']
+[2024-10-10 04:53:24,540] {standard_task_runner.py:77} INFO - Job 474: Subtask print_receipt_detail
+[2024-10-10 04:53:24,567] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T04:51:35.975029+00:00 [running]> on host da843a407010
+[2024-10-10 04:53:24,600] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_receipt_detail
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T04:51:35.975029+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T04:51:35.975029+00:00
+[2024-10-10 04:53:25,645] {logging_mixin.py:104} INFO -        PAY_ID PAY_MEMB_NO PAY_TYPE  ... PAY_REF_ID PAY_PERD_AMT PAY_COND_TYPE
+0  1506004702         470        2  ...       NULL         NULL          NULL
+1  1509006602         660        2  ...       NULL         NULL          NULL
+2  1604004492         449        2  ...       NULL         1660             2
+3  1610003122         312        2  ...       NULL         2300             2
+4  1701002642         264        2  ...       NULL         NULL          NULL
+
+[5 rows x 46 columns]
+[2024-10-10 04:53:25,690] {logging_mixin.py:104} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 35151 entries, 0 to 35150
+Data columns (total 46 columns):
+ #   Column             Non-Null Count  Dtype 
+---  ------             --------------  ----- 
+ 0   PAY_ID             35151 non-null  object
+ 1   PAY_MEMB_NO        35151 non-null  object
+ 2   PAY_TYPE           35151 non-null  object
+ 3   PAY_DOC_NO         35151 non-null  object
+ 4   PAY_SAVING_DOC_NO  35151 non-null  object
+ 5   PAY_DATE           35151 non-null  object
+ 6   PAY_DUE_DATE       35151 non-null  object
+ 7   PAY_OP_CODE1       35151 non-null  object
+ 8   PAY_OP_CODE2       35151 non-null  object
+ 9   PAY_ACC_NO         35151 non-null  object
+ 10  PAY_OLD_SHR        35151 non-null  int64 
+ 11  PAY_OLD_INT        35151 non-null  int64 
+ 12  PAY_SAVE_STS       35151 non-null  int64 
+ 13  PAY_BANK_TYPE      35151 non-null  int64 
+ 14  PAY_MEMB_DEPT      35151 non-null  int64 
+ 15  PAY_USER_ID        35151 non-null  int64 
+ 16  PAY_FINE_AMT       35151 non-null  object
+ 17  PAY_OVER_AMT       35151 non-null  object
+ 18  PAY_PRINT_DATE     35151 non-null  object
+ 19  PAY_PRINT_OP_CODE  35151 non-null  object
+ 20  POST_DATETIME      35151 non-null  object
+ 21  PAY_ITEM           35151 non-null  int64 
+ 22  PAY_PROM_TYPE      35151 non-null  int64 
+ 23  PAY_PROM_YY        35151 non-null  object
+ 24  PAY_PROM_NO        35151 non-null  object
+ 25  PAY_PROM_BRH       35151 non-null  object
+ 26  PAY_PERD           35151 non-null  int64 
+ 27  PAY_AMT1           35151 non-null  int64 
+ 28  PAY_AMT2           35151 non-null  int64 
+ 29  PAY_RECV_AMT1      35151 non-null  int64 
+ 30  PAY_RECV_AMT2      35151 non-null  int64 
+ 31  PAY_MONTH_AMT1     35151 non-null  int64 
+ 32  PAY_MONTH_AMT2     35151 non-null  int64 
+ 33  PAY_ACC_AMT1       35151 non-null  int64 
+ 34  PAY_ACC_AMT2       35151 non-null  int64 
+ 35  PAY_RET_AMT2       35151 non-null  int64 
+ 36  PAY_OLD_BAL        35151 non-null  int64 
+ 37  PAY_ACCU_INT       35151 non-null  int64 
+ 38  PAY_PROM_STS       35151 non-null  object
+ 39  PAY_PROM_INT       35151 non-null  object
+ 40  PAY_RINT_AMT       35151 non-null  object
+ 41  PAY_DESC           35151 non-null  object
+ 42  PAY_REF_NO         35151 non-null  object
+ 43  PAY_REF_ID         35151 non-null  object
+ 44  PAY_PERD_AMT       35151 non-null  object
+ 45  PAY_COND_TYPE      35151 non-null  object
+dtypes: int64(20), object(26)
+memory usage: 12.3+ MB
+[2024-10-10 04:53:25,690] {logging_mixin.py:104} INFO - None
+[2024-10-10 04:53:25,738] {logging_mixin.py:104} INFO -         PAY_OLD_SHR    PAY_OLD_INT  ...   PAY_OLD_BAL  PAY_ACCU_INT
+count  3.515100e+04   35151.000000  ...  3.515100e+04  35151.000000
+mean   6.538318e+05    8883.410913  ...  3.885224e+05      6.405650
+std    5.784030e+05   13842.165275  ...  4.869479e+05     62.333953
+min    1.146500e+05       0.000000  ...  0.000000e+00      0.000000
+25%    3.253600e+05       0.000000  ...  6.146650e+04      0.000000
+50%    4.272100e+05    4082.000000  ...  2.829080e+05      0.000000
+75%    6.635500e+05   11203.000000  ...  4.646685e+05      0.000000
+max    3.667410e+06  152899.000000  ...  3.667410e+06   2955.000000
+
+[8 rows x 20 columns]
+[2024-10-10 04:53:25,739] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 04:53:25,747] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=print_receipt_detail, execution_date=20241010T045135, start_date=20241010T045324, end_date=20241010T045325
+[2024-10-10 04:53:25,764] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 04:53:25,793] {local_task_job.py:149} INFO - Task exited with return code 0

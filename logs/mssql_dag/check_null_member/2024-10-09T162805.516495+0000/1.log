@@ -1,0 +1,25 @@
+[2024-10-09 16:28:09,205] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_member 2024-10-09T16:28:05.516495+00:00 [queued]>
+[2024-10-09 16:28:09,214] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_member 2024-10-09T16:28:05.516495+00:00 [queued]>
+[2024-10-09 16:28:09,214] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:28:09,215] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-09 16:28:09,215] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:28:09,225] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): check_null_member> on 2024-10-09T16:28:05.516495+00:00
+[2024-10-09 16:28:09,229] {standard_task_runner.py:52} INFO - Started process 23816 to run task
+[2024-10-09 16:28:09,232] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'check_null_member', '2024-10-09T16:28:05.516495+00:00', '--job-id', '127', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmplfgdh8a9', '--error-file', '/tmp/tmp9qgt8rqp']
+[2024-10-09 16:28:09,235] {standard_task_runner.py:77} INFO - Job 127: Subtask check_null_member
+[2024-10-09 16:28:09,268] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.check_null_member 2024-10-09T16:28:05.516495+00:00 [running]> on host da843a407010
+[2024-10-09 16:28:09,306] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=check_null_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-09T16:28:05.516495+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-09T16:28:05.516495+00:00
+[2024-10-09 16:28:09,308] {logging_mixin.py:104} INFO - No DataFrame found for Empty DataFrame
+Columns: []
+Index: []
+[2024-10-09 16:28:09,308] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-09 16:28:09,317] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=check_null_member, execution_date=20241009T162805, start_date=20241009T162809, end_date=20241009T162809
+[2024-10-09 16:28:09,340] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-09 16:28:09,364] {local_task_job.py:149} INFO - Task exited with return code 0

@@ -1,0 +1,25 @@
+[2024-10-10 16:49:49,060] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.insert_clean_receipt 2024-10-10T16:47:08.218534+00:00 [queued]>
+[2024-10-10 16:49:49,071] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.insert_clean_receipt 2024-10-10T16:47:08.218534+00:00 [queued]>
+[2024-10-10 16:49:49,071] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:49:49,072] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 16:49:49,072] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:49:49,077] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): insert_clean_receipt> on 2024-10-10T16:47:08.218534+00:00
+[2024-10-10 16:49:49,082] {standard_task_runner.py:52} INFO - Started process 1897 to run task
+[2024-10-10 16:49:49,085] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'insert_clean_receipt', '2024-10-10T16:47:08.218534+00:00', '--job-id', '628', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp6s_wwa98', '--error-file', '/tmp/tmpp8wi1asv']
+[2024-10-10 16:49:49,088] {standard_task_runner.py:77} INFO - Job 628: Subtask insert_clean_receipt
+[2024-10-10 16:49:49,115] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.insert_clean_receipt 2024-10-10T16:47:08.218534+00:00 [running]> on host da843a407010
+[2024-10-10 16:49:49,145] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=insert_clean_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T16:47:08.218534+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T16:47:08.218534+00:00
+[2024-10-10 16:49:51,338] {logging_mixin.py:104} INFO - All records deleted from table 'receipt' successfully.
+[2024-10-10 16:52:00,923] {logging_mixin.py:104} INFO - Inserted 70302 records into clean_receipt successfully.
+[2024-10-10 16:52:00,947] {logging_mixin.py:104} INFO - Successfully inserted 70302 rows into clean_receipt
+[2024-10-10 16:52:00,948] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 16:52:00,956] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=insert_clean_receipt, execution_date=20241010T164708, start_date=20241010T164949, end_date=20241010T165200
+[2024-10-10 16:52:00,974] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 16:52:01,022] {local_task_job.py:149} INFO - Task exited with return code 0

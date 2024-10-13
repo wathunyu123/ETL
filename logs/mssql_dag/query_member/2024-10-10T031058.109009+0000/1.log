@@ -1,0 +1,50 @@
+[2024-10-10 03:10:58,838] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T03:10:58.109009+00:00 [queued]>
+[2024-10-10 03:10:58,844] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T03:10:58.109009+00:00 [queued]>
+[2024-10-10 03:10:58,845] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:10:58,845] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 03:10:58,845] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:10:58,854] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_member> on 2024-10-10T03:10:58.109009+00:00
+[2024-10-10 03:10:58,858] {standard_task_runner.py:52} INFO - Started process 89622 to run task
+[2024-10-10 03:10:58,860] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_member', '2024-10-10T03:10:58.109009+00:00', '--job-id', '291', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp7iw0ualv', '--error-file', '/tmp/tmp65lrpv18']
+[2024-10-10 03:10:58,865] {standard_task_runner.py:77} INFO - Job 291: Subtask query_member
+[2024-10-10 03:10:58,907] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_member 2024-10-10T03:10:58.109009+00:00 [running]> on host da843a407010
+[2024-10-10 03:10:58,942] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T03:10:58.109009+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T03:10:58.109009+00:00
+[2024-10-10 03:10:58,998] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/mssql_dag.py", line 70, in query_table
+    df_member = df_member.drop(columns=columns_to_remove_upper)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/frame.py", line 4174, in drop
+    errors=errors,
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 3889, in drop
+    obj = obj._drop_axis(labels, axis, level=level, errors=errors)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 3923, in _drop_axis
+    new_axis = axis.drop(labels, errors=errors)
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 5287, in drop
+    raise KeyError(f"{labels[mask]} not found in axis")
+KeyError: "['MAST_NAME' 'MAST_FNAME' 'MAST_ADDR' 'MAST_ADDR2' 'MAST_MEMO'\n 'MAST_MARRY_NAME' 'MAST_TEL' 'MAST_ENG_NAME' 'MAST_ENG_FNAME'\n 'MAST_ENG_LNAME' 'MAST_IMAGE' 'MAST_EMAIL'] not found in axis"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/mssql_dag.py", line 98, in query_table
+    raise RuntimeError(f"Error executing query for table '{table_name}': {e}")
+RuntimeError: Error executing query for table 'member': "['MAST_NAME' 'MAST_FNAME' 'MAST_ADDR' 'MAST_ADDR2' 'MAST_MEMO'\n 'MAST_MARRY_NAME' 'MAST_TEL' 'MAST_ENG_NAME' 'MAST_ENG_FNAME'\n 'MAST_ENG_LNAME' 'MAST_IMAGE' 'MAST_EMAIL'] not found in axis"
+[2024-10-10 03:10:59,017] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=mssql_dag, task_id=query_member, execution_date=20241010T031058, start_date=20241010T031058, end_date=20241010T031059
+[2024-10-10 03:10:59,074] {local_task_job.py:149} INFO - Task exited with return code 1

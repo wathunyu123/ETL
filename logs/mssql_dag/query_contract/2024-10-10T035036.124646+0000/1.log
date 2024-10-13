@@ -1,0 +1,24 @@
+[2024-10-10 03:50:37,237] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_contract 2024-10-10T03:50:36.124646+00:00 [queued]>
+[2024-10-10 03:50:37,244] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_contract 2024-10-10T03:50:36.124646+00:00 [queued]>
+[2024-10-10 03:50:37,244] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:50:37,244] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 03:50:37,245] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:50:37,254] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_contract> on 2024-10-10T03:50:36.124646+00:00
+[2024-10-10 03:50:37,259] {standard_task_runner.py:52} INFO - Started process 11782 to run task
+[2024-10-10 03:50:37,262] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_contract', '2024-10-10T03:50:36.124646+00:00', '--job-id', '398', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp4pvae529', '--error-file', '/tmp/tmpsy_pop6f']
+[2024-10-10 03:50:37,265] {standard_task_runner.py:77} INFO - Job 398: Subtask query_contract
+[2024-10-10 03:50:37,296] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_contract 2024-10-10T03:50:36.124646+00:00 [running]> on host da843a407010
+[2024-10-10 03:50:37,329] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_contract
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T03:50:36.124646+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T03:50:36.124646+00:00
+[2024-10-10 03:50:37,421] {logging_mixin.py:104} INFO - All records deleted from table 'tmp_contract' successfully.
+[2024-10-10 03:50:38,806] {logging_mixin.py:104} INFO - Inserted 500 records into tmp_contract successfully.
+[2024-10-10 03:50:38,808] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 03:50:38,820] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_contract, execution_date=20241010T035036, start_date=20241010T035037, end_date=20241010T035038
+[2024-10-10 03:50:38,863] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 03:50:38,918] {local_task_job.py:149} INFO - Task exited with return code 0

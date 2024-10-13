@@ -1,0 +1,53 @@
+[2024-10-10 02:17:20,508] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:17:19.039387+00:00 [queued]>
+[2024-10-10 02:17:20,515] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:17:19.039387+00:00 [queued]>
+[2024-10-10 02:17:20,516] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:17:20,516] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 02:17:20,516] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:17:20,525] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_member> on 2024-10-10T02:17:19.039387+00:00
+[2024-10-10 02:17:20,529] {standard_task_runner.py:52} INFO - Started process 61764 to run task
+[2024-10-10 02:17:20,532] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_member', '2024-10-10T02:17:19.039387+00:00', '--job-id', '242', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpjmtzy35_', '--error-file', '/tmp/tmp3xg2h5cf']
+[2024-10-10 02:17:20,535] {standard_task_runner.py:77} INFO - Job 242: Subtask query_member
+[2024-10-10 02:17:20,569] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_member 2024-10-10T02:17:19.039387+00:00 [running]> on host da843a407010
+[2024-10-10 02:17:20,606] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T02:17:19.039387+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T02:17:19.039387+00:00
+[2024-10-10 02:17:20,651] {python.py:151} INFO - Done. Returned value was: Empty DataFrame
+Columns: [MAST_MEMB_NO, MAST_MEMB_DEPT, MAST_DEPT_BRH, MAST_NAME, MAST_FNAME, MAST_ADDR, MAST_ZIP, MAST_BIRTH_YMD, MAST_MARRY_STS, MAST_TEL, MAST_YMD_IN, MAST_YMD_OUT, MAST_SALARY, MAST_MEMB_TYPE, MAST_MONTH_SHR, MAST_PAID_TYPE, MAST_REC_STS, MAST_PAID_COND, MAST_PAID_LAST, MAST_PAID_TIME, MAST_PAID_PERD, MAST_PAID_AMT, MAST_PAID_SHR, MAST_RECV_STS, MAST_RET_STS, MAST_INT_COMM, MAST_INT_EMRG, MAST_INT_SPEC, MAST_ACCU_DIVD, MAST_MEMB_ID, MAST_CLEAR_YMD, MAST_CLEAR_AMT, MAST_CHANGE_YMD, MAST_OLD_INT, MAST_MEMB_FLAG, MAST_GUARANTEE, MAST_PAIDDIVD_STS, MAST_GUAR_STS, MAST_OUT_STS, MAST_CARD_ID, MAST_PAY_STS, MAST_MEMO, MAST_MARRY_MEMBNO, MAST_PROM_HOME, MAST_RIGHT_TYPE, MAST_FLAG_STS1, MAST_MEMB_SEX, MAST_HELP_CNT, MAST_IMAGE, MAST_EMAIL, MAST_RECV_BANK_NO, MAST_RECV_BANK_TYPE, MAST_PAY_BANK_NO, MAST_PAY_BANK_TYPE, MAST_CARD_BANK_NO, MAST_CARD_BANK_TYPE, MAST_CARD_BANK_STS, MAST_CLEVEL, MAST_SALARY2, MAST_ENG_FNAME, MAST_ENG_NAME, MAST_ENG_LNAME, MAST_CARD_DATE1, MAST_CARD_DATE2, MAST_BANK_ACNO, MAST_BANK_ACNO_TYPE, MAST_MARRY_NAME, MAST_POSITION, MAST_BOOK_LINE, MAST_NATIONAL, MAST_MOBILE, MAST_SMS_GRP, MAST_SMS_STS, MAST_ACC_NO, MAST_PROM_NO, MAST_FINE_AMT, MAST_PROM_INT, MAST_SAL_ACC_NO, MAST_SAL_TO_COOP, MAST_SAL_TO_BANK, MAST_ADDR2, MAST_ZIP2, MAST_REP_PAY_AMT, MAST_IS_PRN_SLIP, MAST_SEND_DOC_TYPE, MAST_REF_MEMB_NO, MAST_MEMB_REF_STS, MAST_RETIRE_SALARY, MAST_INC_AMT, MAST_BLOOD_GROUP, MAST_SALARY_DEP, MAST_OP_CODE, MAST_WORK_DATE, MAST_EMP_TYPE, MAST_RISK_STS, MAST_GUIDE_MEMB_NO, POST_DATETIME]
+Index: []
+
+[0 rows x 97 columns]
+[2024-10-10 02:17:20,656] {xcom.py:229} ERROR - Could not serialize the XCom value into JSON. If you are using pickle instead of JSON for XCom, then you need to enable pickle support for XCom in your *** config.
+[2024-10-10 02:17:20,657] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1364, in _execute_task
+    self.xcom_push(key=XCOM_RETURN_KEY, value=result)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1943, in xcom_push
+    session=session,
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/utils/session.py", line 67, in wrapper
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 79, in set
+    value = XCom.serialize_value(value)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/xcom.py", line 226, in serialize_value
+    return json.dumps(value).encode('UTF-8')
+  File "/usr/local/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/local/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'DataFrame' is not JSON serializable
+[2024-10-10 02:17:20,659] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=mssql_dag, task_id=query_member, execution_date=20241010T021719, start_date=20241010T021720, end_date=20241010T021720
+[2024-10-10 02:17:20,704] {local_task_job.py:149} INFO - Task exited with return code 1

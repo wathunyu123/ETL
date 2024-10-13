@@ -1,0 +1,23 @@
+[2024-10-10 13:32:57,049] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean1_member 2024-10-10T13:32:50.661629+00:00 [queued]>
+[2024-10-10 13:32:57,063] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.clean1_member 2024-10-10T13:32:50.661629+00:00 [queued]>
+[2024-10-10 13:32:57,064] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 13:32:57,064] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 13:32:57,065] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 13:32:57,072] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): clean1_member> on 2024-10-10T13:32:50.661629+00:00
+[2024-10-10 13:32:57,078] {standard_task_runner.py:52} INFO - Started process 792 to run task
+[2024-10-10 13:32:57,083] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'clean1_member', '2024-10-10T13:32:50.661629+00:00', '--job-id', '508', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpzlz72w0t', '--error-file', '/tmp/tmp0kzk8tdc']
+[2024-10-10 13:32:57,087] {standard_task_runner.py:77} INFO - Job 508: Subtask clean1_member
+[2024-10-10 13:32:57,136] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.clean1_member 2024-10-10T13:32:50.661629+00:00 [running]> on host da843a407010
+[2024-10-10 13:32:57,188] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=clean1_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T13:32:50.661629+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T13:32:50.661629+00:00
+[2024-10-10 13:32:57,765] {logging_mixin.py:104} INFO - Inserted 150 records into tmp_member successfully.
+[2024-10-10 13:32:57,766] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 13:32:57,774] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=clean1_member, execution_date=20241010T133250, start_date=20241010T133257, end_date=20241010T133257
+[2024-10-10 13:32:57,797] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 13:32:57,816] {local_task_job.py:149} INFO - Task exited with return code 0

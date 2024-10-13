@@ -1,0 +1,37 @@
+[2024-10-09 16:19:36,879] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-09T16:19:35.085473+00:00 [queued]>
+[2024-10-09 16:19:36,889] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-09T16:19:35.085473+00:00 [queued]>
+[2024-10-09 16:19:36,889] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:19:36,890] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-09 16:19:36,891] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:19:36,903] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_receipt> on 2024-10-09T16:19:35.085473+00:00
+[2024-10-09 16:19:36,907] {standard_task_runner.py:52} INFO - Started process 19237 to run task
+[2024-10-09 16:19:36,912] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_receipt', '2024-10-09T16:19:35.085473+00:00', '--job-id', '108', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmptryz2is7', '--error-file', '/tmp/tmpfacn787e']
+[2024-10-09 16:19:36,916] {standard_task_runner.py:77} INFO - Job 108: Subtask query_receipt
+[2024-10-09 16:19:36,960] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_receipt 2024-10-09T16:19:35.085473+00:00 [running]> on host da843a407010
+[2024-10-09 16:19:36,998] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-09T16:19:35.085473+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-09T16:19:35.085473+00:00
+[2024-10-09 16:19:37,031] {logging_mixin.py:104} INFO - SELECT * FROM receipt
+[2024-10-09 16:19:38,470] {logging_mixin.py:104} INFO -            PAY_ID PAY_MEMB_NO PAY_TYPE  ... PAY_REF_ID PAY_PERD_AMT PAY_COND_TYPE
+0      1501000492          49        2  ...       NULL         1280             2
+1      1501001500         150        0  ...       NULL         1900             2
+2      1501002720         272        0  ...       NULL         3000             1
+3      1501003242         324        2  ...       NULL         2370             2
+4      1501003772         377        2  ...       NULL         NULL          NULL
+...           ...         ...      ...  ...        ...          ...           ...
+35146  2403007562         756        2  ...       NULL         NULL          NULL
+35147  2403007592         759        2  ...       NULL         NULL          NULL
+35148  2403007592         759        2  ...       NULL         5280             2
+35149  2403007592         759        2  ...       NULL         NULL          NULL
+35150  2403007672         767        2  ...       NULL         NULL          NULL
+
+[35151 rows x 46 columns]
+[2024-10-09 16:19:38,470] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-09 16:19:38,478] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_receipt, execution_date=20241009T161935, start_date=20241009T161936, end_date=20241009T161938
+[2024-10-09 16:19:38,499] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-09 16:19:38,531] {local_task_job.py:149} INFO - Task exited with return code 0

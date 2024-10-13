@@ -1,0 +1,100 @@
+[2024-10-10 16:28:29,387] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_contract_detail 2024-10-10T16:28:25.919464+00:00 [queued]>
+[2024-10-10 16:28:29,399] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_contract_detail 2024-10-10T16:28:25.919464+00:00 [queued]>
+[2024-10-10 16:28:29,399] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:28:29,399] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 16:28:29,400] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:28:29,407] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_contract_detail> on 2024-10-10T16:28:25.919464+00:00
+[2024-10-10 16:28:29,412] {standard_task_runner.py:52} INFO - Started process 90130 to run task
+[2024-10-10 16:28:29,415] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_contract_detail', '2024-10-10T16:28:25.919464+00:00', '--job-id', '588', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpmwjj_un9', '--error-file', '/tmp/tmpvku1byg5']
+[2024-10-10 16:28:29,419] {standard_task_runner.py:77} INFO - Job 588: Subtask print_contract_detail
+[2024-10-10 16:28:29,456] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_contract_detail 2024-10-10T16:28:25.919464+00:00 [running]> on host da843a407010
+[2024-10-10 16:28:29,498] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_contract_detail
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T16:28:25.919464+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T16:28:25.919464+00:00
+[2024-10-10 16:28:29,593] {logging_mixin.py:104} INFO -    PROM_MEMB_NO  PROM_LOAN_TYPE  ...  PROM_OP_CODE  POST_DATETIME
+0           543               3  ...          NULL           NULL
+1           662               3  ...          NULL           NULL
+2           735               3  ...          NULL           NULL
+3            48               3  ...          NULL           NULL
+4           256               2  ...          NULL           NULL
+
+[5 rows x 51 columns]
+[2024-10-10 16:28:29,601] {logging_mixin.py:104} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 500 entries, 0 to 499
+Data columns (total 51 columns):
+ #   Column                   Non-Null Count  Dtype 
+---  ------                   --------------  ----- 
+ 0   PROM_MEMB_NO             500 non-null    int64 
+ 1   PROM_LOAN_TYPE           500 non-null    int64 
+ 2   PROM_YY                  500 non-null    int64 
+ 3   PROM_NO                  500 non-null    int64 
+ 4   PROM_LOAN_BRH            500 non-null    int64 
+ 5   PROM_LOAN_YMD            500 non-null    int64 
+ 6   PROM_LOAN_AMT            500 non-null    int64 
+ 7   PROM_LOAN_PERD           500 non-null    int64 
+ 8   PROM_LOAN_PERD_AMT       500 non-null    int64 
+ 9   PROM_LAST_YMD            500 non-null    int64 
+ 10  PROM_PAID_AMT            500 non-null    int64 
+ 11  PROM_PAID_INT            500 non-null    int64 
+ 12  PROM_PAID_PERD           500 non-null    int64 
+ 13  PROM_PAID_TIME           500 non-null    int64 
+ 14  PROM_PAID_STS            500 non-null    int64 
+ 15  PROM_CODERATE            500 non-null    object
+ 16  PROM_COND_TYPE           500 non-null    int64 
+ 17  PROM_PERD_AMT            500 non-null    int64 
+ 18  PROM_REAL_AMT            500 non-null    int64 
+ 19  PROM_RECV_AMT            500 non-null    int64 
+ 20  PROM_RECV_YMD            500 non-null    object
+ 21  PROM_RECV_TIME           500 non-null    int64 
+ 22  PROM_REASON              500 non-null    int64 
+ 23  PROM_WITH_MEMBNO         500 non-null    object
+ 24  PROM_WITH_TYPE           500 non-null    object
+ 25  PROM_INT_YMD             500 non-null    int64 
+ 26  PROM_ACCU_INT            500 non-null    int64 
+ 27  PROM_SPEC_TYPE           500 non-null    object
+ 28  PROM_AMT_YMD             500 non-null    int64 
+ 29  PROM_RET_INT             500 non-null    int64 
+ 30  PROM_NPAY_INT            500 non-null    int64 
+ 31  PROM_REQ_STS             500 non-null    object
+ 32  PROM_PAY_STS             500 non-null    int64 
+ 33  PROM_DUE_DATE            398 non-null    object
+ 34  PROM_CHK_RIGHT           500 non-null    object
+ 35  PROM_IS_CALL_AVG_INT     500 non-null    object
+ 36  PROM_IS_CALL_ACCUED_INT  500 non-null    object
+ 37  PROM_STOP_AMT_STS        500 non-null    object
+ 38  PROM_NPL_CODE            500 non-null    object
+ 39  PROM_DEBT_STS            500 non-null    object
+ 40  PROM_DEBT_DUE_DATE       500 non-null    object
+ 41  PROM_START_PAY           500 non-null    object
+ 42  PROM_IS_CANCEL           500 non-null    object
+ 43  PROM_PAID_MONTH_AMT      500 non-null    object
+ 44  PROM_FUND_AMT            500 non-null    object
+ 45  PROM_FUND_PAID_AMT       500 non-null    object
+ 46  PROM_INT2_BAL            500 non-null    object
+ 47  PROM_PERD_AMT_ADD        500 non-null    object
+ 48  PROM_PERD_AMT_ADD_NEXT   481 non-null    object
+ 49  PROM_OP_CODE             500 non-null    object
+ 50  POST_DATETIME            500 non-null    object
+dtypes: int64(27), object(24)
+memory usage: 199.3+ KB
+[2024-10-10 16:28:29,601] {logging_mixin.py:104} INFO - None
+[2024-10-10 16:28:29,671] {logging_mixin.py:104} INFO -        PROM_MEMB_NO  PROM_LOAN_TYPE  ...  PROM_NPAY_INT  PROM_PAY_STS
+count    500.000000      500.000000  ...          500.0    500.000000
+mean     417.514000        2.756000  ...            0.0      0.040000
+std      230.675096        0.526325  ...            0.0      0.196155
+min       11.000000        1.000000  ...            0.0      0.000000
+25%      277.000000        3.000000  ...            0.0      0.000000
+50%      385.000000        3.000000  ...            0.0      0.000000
+75%      637.250000        3.000000  ...            0.0      0.000000
+max      767.000000        3.000000  ...            0.0      1.000000
+
+[8 rows x 27 columns]
+[2024-10-10 16:28:29,672] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 16:28:29,679] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=print_contract_detail, execution_date=20241010T162825, start_date=20241010T162829, end_date=20241010T162829
+[2024-10-10 16:28:29,699] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 16:28:29,707] {local_task_job.py:149} INFO - Task exited with return code 0

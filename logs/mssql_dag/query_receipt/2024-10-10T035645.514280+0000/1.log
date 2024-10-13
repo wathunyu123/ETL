@@ -1,0 +1,36 @@
+[2024-10-10 03:56:46,259] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:56:45.514280+00:00 [queued]>
+[2024-10-10 03:56:46,283] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:56:45.514280+00:00 [queued]>
+[2024-10-10 03:56:46,293] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:56:46,299] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 03:56:46,310] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 03:56:46,328] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_receipt> on 2024-10-10T03:56:45.514280+00:00
+[2024-10-10 03:56:46,338] {standard_task_runner.py:52} INFO - Started process 15205 to run task
+[2024-10-10 03:56:46,343] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_receipt', '2024-10-10T03:56:45.514280+00:00', '--job-id', '414', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpwmjxo_nm', '--error-file', '/tmp/tmp9myi3w5i']
+[2024-10-10 03:56:46,348] {standard_task_runner.py:77} INFO - Job 414: Subtask query_receipt
+[2024-10-10 03:56:46,382] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_receipt 2024-10-10T03:56:45.514280+00:00 [running]> on host da843a407010
+[2024-10-10 03:56:46,417] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_receipt
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T03:56:45.514280+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T03:56:45.514280+00:00
+[2024-10-10 03:56:47,398] {logging_mixin.py:104} INFO - Index(['PAY_ID', 'PAY_MEMB_NO', 'PAY_TYPE', 'PAY_DOC_NO', 'PAY_SAVING_DOC_NO',
+       'PAY_DATE', 'PAY_DUE_DATE', 'PAY_OP_CODE1', 'PAY_OP_CODE2',
+       'PAY_ACC_NO', 'PAY_OLD_SHR', 'PAY_OLD_INT', 'PAY_SAVE_STS',
+       'PAY_BANK_TYPE', 'PAY_MEMB_DEPT', 'PAY_USER_ID', 'PAY_FINE_AMT',
+       'PAY_OVER_AMT', 'PAY_PRINT_DATE', 'PAY_PRINT_OP_CODE', 'POST_DATETIME',
+       'PAY_ITEM', 'PAY_PROM_TYPE', 'PAY_PROM_YY', 'PAY_PROM_NO',
+       'PAY_PROM_BRH', 'PAY_PERD', 'PAY_AMT1', 'PAY_AMT2', 'PAY_RECV_AMT1',
+       'PAY_RECV_AMT2', 'PAY_MONTH_AMT1', 'PAY_MONTH_AMT2', 'PAY_ACC_AMT1',
+       'PAY_ACC_AMT2', 'PAY_RET_AMT2', 'PAY_OLD_BAL', 'PAY_ACCU_INT',
+       'PAY_PROM_STS', 'PAY_PROM_INT', 'PAY_RINT_AMT', 'PAY_DESC',
+       'PAY_REF_NO', 'PAY_REF_ID', 'PAY_PERD_AMT', 'PAY_COND_TYPE'],
+      dtype='object')
+[2024-10-10 03:56:47,475] {logging_mixin.py:104} INFO - All records deleted from table 'tmp_receipt' successfully.
+[2024-10-10 03:58:27,565] {logging_mixin.py:104} INFO - Inserted 35151 records into tmp_receipt successfully.
+[2024-10-10 03:58:27,578] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 03:58:27,587] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_receipt, execution_date=20241010T035645, start_date=20241010T035646, end_date=20241010T035827
+[2024-10-10 03:58:27,615] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 03:58:27,684] {local_task_job.py:149} INFO - Task exited with return code 0

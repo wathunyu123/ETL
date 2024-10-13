@@ -1,0 +1,43 @@
+[2024-10-09 16:24:39,775] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail 2024-10-09T16:19:35.085473+00:00 [queued]>
+[2024-10-09 16:24:39,783] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_member_detail 2024-10-09T16:19:35.085473+00:00 [queued]>
+[2024-10-09 16:24:39,784] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:24:39,784] {taskinstance.py:1088} INFO - Starting attempt 2 of 2
+[2024-10-09 16:24:39,785] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 16:24:39,794] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_member_detail> on 2024-10-09T16:19:35.085473+00:00
+[2024-10-09 16:24:39,799] {standard_task_runner.py:52} INFO - Started process 21900 to run task
+[2024-10-09 16:24:39,802] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_member_detail', '2024-10-09T16:19:35.085473+00:00', '--job-id', '120', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp9pfj2jnu', '--error-file', '/tmp/tmpx5z4ihsx']
+[2024-10-09 16:24:39,808] {standard_task_runner.py:77} INFO - Job 120: Subtask print_member_detail
+[2024-10-09 16:24:39,865] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_member_detail 2024-10-09T16:19:35.085473+00:00 [running]> on host da843a407010
+[2024-10-09 16:24:39,934] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_member_detail
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-09T16:19:35.085473+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-09T16:19:35.085473+00:00
+[2024-10-09 16:24:39,939] {logging_mixin.py:104} INFO - Empty DataFrame
+Columns: []
+Index: []
+[2024-10-09 16:24:39,942] {logging_mixin.py:104} INFO - <class 'pandas.core.frame.DataFrame'>
+Index: 0 entries
+Empty DataFrameNone
+[2024-10-09 16:24:39,943] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/mssql_dag.py", line 125, in print_detail_df
+    print(df.describe())
+  File "/home/airflow/.local/lib/python3.6/site-packages/pandas/core/generic.py", line 9980, in describe
+    raise ValueError("Cannot describe a DataFrame without columns")
+ValueError: Cannot describe a DataFrame without columns
+[2024-10-09 16:24:39,954] {taskinstance.py:1551} INFO - Marking task as FAILED. dag_id=mssql_dag, task_id=print_member_detail, execution_date=20241009T161935, start_date=20241009T162439, end_date=20241009T162439
+[2024-10-09 16:24:39,975] {local_task_job.py:149} INFO - Task exited with return code 1

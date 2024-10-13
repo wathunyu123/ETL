@@ -1,0 +1,55 @@
+[2024-10-11 01:56:11,573] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_contract 2024-10-10T00:00:00+00:00 [queued]>
+[2024-10-11 01:56:11,589] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_contract 2024-10-10T00:00:00+00:00 [queued]>
+[2024-10-11 01:56:11,590] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-11 01:56:11,591] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-11 01:56:11,591] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-11 01:56:11,599] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_contract> on 2024-10-10T00:00:00+00:00
+[2024-10-11 01:56:11,608] {standard_task_runner.py:52} INFO - Started process 272 to run task
+[2024-10-11 01:56:11,611] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_contract', '2024-10-10T00:00:00+00:00', '--job-id', '631', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpc4crt5zj', '--error-file', '/tmp/tmphpra_qs7']
+[2024-10-11 01:56:11,616] {standard_task_runner.py:77} INFO - Job 631: Subtask query_contract
+[2024-10-11 01:56:11,649] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_contract 2024-10-10T00:00:00+00:00 [running]> on host da843a407010
+[2024-10-11 01:56:11,695] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_contract
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-10-10T00:00:00+00:00
+[2024-10-11 01:56:32,734] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "src/pymssql/_pymssql.pyx", line 650, in pymssql._pymssql.connect
+  File "src/pymssql/_mssql.pyx", line 2155, in pymssql._mssql.connect
+  File "src/pymssql/_mssql.pyx", line 712, in pymssql._mssql.MSSQLConnection.__init__
+  File "src/pymssql/_mssql.pyx", line 1881, in pymssql._mssql.maybe_raise_MSSQLDatabaseException
+  File "src/pymssql/_mssql.pyx", line 1898, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/mssql_dag.py", line 33, in connect_mssql
+    charset='UTF-8'
+  File "src/pymssql/_pymssql.pyx", line 659, in pymssql._pymssql.connect
+pymssql.exceptions.OperationalError: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/mssql_dag.py", line 46, in query_table
+    connection = connect_mssql()
+  File "/opt/airflow/dags/mssql_dag.py", line 37, in connect_mssql
+    raise RuntimeError(f"Error connecting to MSSQL: {e}")
+RuntimeError: Error connecting to MSSQL: (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\nDB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.7)\nNet-Lib error during Connection refused (111)\n')
+[2024-10-11 01:56:32,767] {taskinstance.py:1551} INFO - Marking task as UP_FOR_RETRY. dag_id=mssql_dag, task_id=query_contract, execution_date=20241010T000000, start_date=20241011T015611, end_date=20241011T015632
+[2024-10-11 01:56:32,830] {local_task_job.py:149} INFO - Task exited with return code 1

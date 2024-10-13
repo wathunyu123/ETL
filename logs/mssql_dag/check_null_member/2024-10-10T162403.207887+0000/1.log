@@ -1,0 +1,34 @@
+[2024-10-10 16:24:08,978] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_member 2024-10-10T16:24:03.207887+00:00 [queued]>
+[2024-10-10 16:24:08,988] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.check_null_member 2024-10-10T16:24:03.207887+00:00 [queued]>
+[2024-10-10 16:24:08,988] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:24:08,989] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 16:24:08,989] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 16:24:08,995] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): check_null_member> on 2024-10-10T16:24:03.207887+00:00
+[2024-10-10 16:24:09,000] {standard_task_runner.py:52} INFO - Started process 87602 to run task
+[2024-10-10 16:24:09,003] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'check_null_member', '2024-10-10T16:24:03.207887+00:00', '--job-id', '569', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp9vaznvfb', '--error-file', '/tmp/tmp1i2jb3x2']
+[2024-10-10 16:24:09,005] {standard_task_runner.py:77} INFO - Job 569: Subtask check_null_member
+[2024-10-10 16:24:09,034] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.check_null_member 2024-10-10T16:24:03.207887+00:00 [running]> on host da843a407010
+[2024-10-10 16:24:09,070] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=check_null_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T16:24:03.207887+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T16:24:03.207887+00:00
+[2024-10-10 16:24:09,113] {logging_mixin.py:104} INFO - MAST_MEMB_NO          0
+MAST_MEMB_DEPT        0
+MAST_DEPT_BRH         0
+MAST_ZIP              0
+MAST_BIRTH_YMD        0
+                     ..
+MAST_WORK_DATE        0
+MAST_EMP_TYPE         0
+MAST_RISK_STS         0
+MAST_GUIDE_MEMB_NO    0
+POST_DATETIME         0
+Length: 85, dtype: int64
+[2024-10-10 16:24:09,113] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 16:24:09,121] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=check_null_member, execution_date=20241010T162403, start_date=20241010T162408, end_date=20241010T162409
+[2024-10-10 16:24:09,139] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 16:24:09,175] {local_task_job.py:149} INFO - Task exited with return code 0

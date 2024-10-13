@@ -1,0 +1,23 @@
+[2024-10-09 09:33:09,461] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-09T09:33:07.906646+00:00 [queued]>
+[2024-10-09 09:33:09,469] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-09T09:33:07.906646+00:00 [queued]>
+[2024-10-09 09:33:09,469] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 09:33:09,470] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-09 09:33:09,470] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-09 09:33:09,479] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_member> on 2024-10-09T09:33:07.906646+00:00
+[2024-10-09 09:33:09,483] {standard_task_runner.py:52} INFO - Started process 14224 to run task
+[2024-10-09 09:33:09,486] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_member', '2024-10-09T09:33:07.906646+00:00', '--job-id', '84', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmps7iq73w5', '--error-file', '/tmp/tmpf1aiml12']
+[2024-10-09 09:33:09,490] {standard_task_runner.py:77} INFO - Job 84: Subtask query_member
+[2024-10-09 09:33:09,522] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_member 2024-10-09T09:33:07.906646+00:00 [running]> on host da843a407010
+[2024-10-09 09:33:09,554] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-09T09:33:07.906646+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-09T09:33:07.906646+00:00
+[2024-10-09 09:33:09,611] {logging_mixin.py:104} INFO - SELECT * FROM member
+[2024-10-09 09:33:09,653] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-09 09:33:09,662] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_member, execution_date=20241009T093307, start_date=20241009T093309, end_date=20241009T093309
+[2024-10-09 09:33:09,690] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-09 09:33:09,698] {local_task_job.py:149} INFO - Task exited with return code 0

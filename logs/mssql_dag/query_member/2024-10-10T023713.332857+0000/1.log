@@ -1,0 +1,24 @@
+[2024-10-10 02:37:15,003] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:37:13.332857+00:00 [queued]>
+[2024-10-10 02:37:15,013] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.query_member 2024-10-10T02:37:13.332857+00:00 [queued]>
+[2024-10-10 02:37:15,013] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:37:15,013] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 02:37:15,014] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 02:37:15,026] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): query_member> on 2024-10-10T02:37:13.332857+00:00
+[2024-10-10 02:37:15,031] {standard_task_runner.py:52} INFO - Started process 72203 to run task
+[2024-10-10 02:37:15,034] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'query_member', '2024-10-10T02:37:13.332857+00:00', '--job-id', '265', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmp8p5vnlfo', '--error-file', '/tmp/tmpcecb3pi2']
+[2024-10-10 02:37:15,038] {standard_task_runner.py:77} INFO - Job 265: Subtask query_member
+[2024-10-10 02:37:15,071] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.query_member 2024-10-10T02:37:13.332857+00:00 [running]> on host da843a407010
+[2024-10-10 02:37:15,116] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=query_member
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T02:37:13.332857+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T02:37:13.332857+00:00
+[2024-10-10 02:37:15,241] {logging_mixin.py:104} INFO - All records deleted from table 'tmp_member' successfully.
+[2024-10-10 02:37:15,596] {logging_mixin.py:104} INFO - Error inserting DataFrame: (207, b"Invalid column name 'nan'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[2024-10-10 02:37:15,597] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 02:37:15,606] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=query_member, execution_date=20241010T023713, start_date=20241010T023715, end_date=20241010T023715
+[2024-10-10 02:37:15,629] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 02:37:15,647] {local_task_job.py:149} INFO - Task exited with return code 0

@@ -1,0 +1,33 @@
+[2024-10-10 04:56:48,513] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_contract_detail_second 2024-10-10T04:51:35.975029+00:00 [queued]>
+[2024-10-10 04:56:48,521] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_contract_detail_second 2024-10-10T04:51:35.975029+00:00 [queued]>
+[2024-10-10 04:56:48,522] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:56:48,523] {taskinstance.py:1088} INFO - Starting attempt 2 of 2
+[2024-10-10 04:56:48,523] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 04:56:48,533] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_contract_detail_second> on 2024-10-10T04:51:35.975029+00:00
+[2024-10-10 04:56:48,552] {standard_task_runner.py:52} INFO - Started process 42930 to run task
+[2024-10-10 04:56:48,554] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_contract_detail_second', '2024-10-10T04:51:35.975029+00:00', '--job-id', '480', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpifbcqoc2', '--error-file', '/tmp/tmpnerqie63']
+[2024-10-10 04:56:48,558] {standard_task_runner.py:77} INFO - Job 480: Subtask print_contract_detail_second
+[2024-10-10 04:56:48,591] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_contract_detail_second 2024-10-10T04:51:35.975029+00:00 [running]> on host da843a407010
+[2024-10-10 04:56:48,626] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_contract_detail_second
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T04:51:35.975029+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T04:51:35.975029+00:00
+[2024-10-10 04:56:48,627] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.6/site-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: print_detail_df() missing 1 required positional argument: 'table_name'
+[2024-10-10 04:56:48,629] {taskinstance.py:1551} INFO - Marking task as FAILED. dag_id=mssql_dag, task_id=print_contract_detail_second, execution_date=20241010T045135, start_date=20241010T045648, end_date=20241010T045648
+[2024-10-10 04:56:48,647] {local_task_job.py:149} INFO - Task exited with return code 1

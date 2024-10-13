@@ -1,0 +1,41 @@
+[2024-10-10 01:49:36,492] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T01:49:33.696073+00:00 [queued]>
+[2024-10-10 01:49:36,500] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T01:49:33.696073+00:00 [queued]>
+[2024-10-10 01:49:36,512] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:49:36,514] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2024-10-10 01:49:36,516] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2024-10-10 01:49:36,525] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): print_receipt_detail> on 2024-10-10T01:49:33.696073+00:00
+[2024-10-10 01:49:36,530] {standard_task_runner.py:52} INFO - Started process 47058 to run task
+[2024-10-10 01:49:36,533] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'mssql_dag', 'print_receipt_detail', '2024-10-10T01:49:33.696073+00:00', '--job-id', '202', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/mssql_dag.py', '--cfg-path', '/tmp/tmpriz3cfb_', '--error-file', '/tmp/tmpap1ny3fu']
+[2024-10-10 01:49:36,536] {standard_task_runner.py:77} INFO - Job 202: Subtask print_receipt_detail
+[2024-10-10 01:49:36,569] {logging_mixin.py:104} INFO - Running <TaskInstance: mssql_dag.print_receipt_detail 2024-10-10T01:49:33.696073+00:00 [running]> on host da843a407010
+[2024-10-10 01:49:36,599] {taskinstance.py:1302} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=mssql_dag
+AIRFLOW_CTX_TASK_ID=print_receipt_detail
+AIRFLOW_CTX_EXECUTION_DATE=2024-10-10T01:49:33.696073+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-10-10T01:49:33.696073+00:00
+[2024-10-10 01:49:37,858] {logging_mixin.py:104} INFO -            PAY_ID PAY_MEMB_NO PAY_TYPE  ... PAY_REF_ID PAY_PERD_AMT PAY_COND_TYPE
+0      1501000492          49        2  ...       NULL         1280             2
+1      1501001500         150        0  ...       NULL         1900             2
+2      1501002720         272        0  ...       NULL         3000             1
+3      1501003242         324        2  ...       NULL         2370             2
+4      1501003772         377        2  ...       NULL         NULL          NULL
+...           ...         ...      ...  ...        ...          ...           ...
+35146  2403007562         756        2  ...       NULL         NULL          NULL
+35147  2403007592         759        2  ...       NULL         NULL          NULL
+35148  2403007592         759        2  ...       NULL         5280             2
+35149  2403007592         759        2  ...       NULL         NULL          NULL
+35150  2403007672         767        2  ...       NULL         NULL          NULL
+
+[35151 rows x 46 columns]
+[2024-10-10 01:50:47,230] {local_task_job.py:198} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2024-10-10 01:50:47,236] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 47058
+[2024-10-10 01:50:47,243] {taskinstance.py:1284} ERROR - Received SIGTERM. Terminating subprocesses.
+[2024-10-10 01:50:47,244] {logging_mixin.py:104} INFO - Error inserting DataFrame: Task received SIGTERM signal
+[2024-10-10 01:50:47,257] {logging_mixin.py:104} INFO - The DataFrame for table 'receipt' is empty.
+[2024-10-10 01:50:47,267] {python.py:151} INFO - Done. Returned value was: None
+[2024-10-10 01:50:47,275] {taskinstance.py:1211} INFO - Marking task as SUCCESS. dag_id=mssql_dag, task_id=print_receipt_detail, execution_date=20241010T014933, start_date=20241010T014936, end_date=20241010T015047
+[2024-10-10 01:50:47,296] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-10 01:50:47,332] {process_utils.py:66} INFO - Process psutil.Process(pid=47058, status='terminated', exitcode=0, started='01:49:36') (47058) terminated with exit code 0
